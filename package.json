@@ -1,0 +1,25 @@
+{
+  "name": "crafting-lvl",
+  "version": "0.0.1",
+  "description": "Calculate how many items tou need to level up to a target level.",
+  "scripts": {
+    "clean": "rmdir dist /s /q",
+    "predev": "npm run clean",
+    "dev": "parcel src/index.html --lazy",
+    "prebuild": "npm run clean",
+    "build": "parcel build src/index.html --dist-dir dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0",
+    "process": "^0.11.10",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

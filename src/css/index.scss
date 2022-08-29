@@ -1,0 +1,17 @@
+main {
+  max-width: 500px;
+  margin: 1rem auto;
+
+  &, form {
+    gap: 1rem;
+  }
+
+  &, form, label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  hr {
+    width: 100%;
+  }
+}
