@@ -4,10 +4,8 @@
   "description": "Calculate how many items tou need to level up to a target level.",
   "scripts": {
     "clean": "rmdir dist /s /q",
-    "predev": "npm run clean",
     "dev": "parcel src/index.html --lazy",
-    "prebuild": "npm run clean",
-    "build": "parcel build src/index.html --dist-dir dist"
+    "build": "parcel build src/index.html"
   },
   "keywords": [],
   "author": "",
