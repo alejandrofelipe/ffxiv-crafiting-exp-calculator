@@ -1,4 +1,4 @@
-import DataLevelChart from "../../data/level_chart.json";
+import DataLevelChart from "../data/level_chart.json";
 
 interface Level {
     lvl: number;

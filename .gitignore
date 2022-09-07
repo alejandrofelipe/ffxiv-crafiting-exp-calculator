@@ -3,5 +3,6 @@ node_modules/
 dist/
 public/
 .parcel-cache/
+.next/
 
 *-lock.*

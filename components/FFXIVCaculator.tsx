@@ -1,5 +1,5 @@
-import {useCallback, useState} from "react";
-import LevelChart from "./helpers/LevelChart";
+import {FormEvent, useCallback, useState} from "react";
+import LevelChart from "../helpers/LevelChart";
 
 interface ResultCalc {
     quantity: number
@@ -14,10 +14,10 @@ interface FormDataCalc {
     item_exp?: number;
 }
 
-export default function App() {
+export default function FFXIVCaculator() {
     const [result, setResult] = useState({quantity: 0} as ResultCalc);
 
-    const handleSubmit = useCallback((ev: SubmitEvent) => {
+    const handleSubmit = useCallback((ev: FormEvent<HTMLFormElement>) => {
         ev.preventDefault();
         const formData = new FormData(ev.target as HTMLFormElement);
         let formDataEntries = Object.fromEntries(formData);

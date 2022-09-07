@@ -18,5 +18,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "moduleResolution": "Node"
-  }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
