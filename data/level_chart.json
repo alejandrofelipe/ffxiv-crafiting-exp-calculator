@@ -446,7 +446,57 @@
   },
   {
     "lvl": 90,
-    "exp_next": 0,
+    "exp_next": 13278000,
     "total_base": 150922270
+  },
+  {
+    "lvl": 91,
+    "exp_next": 13659000,
+    "total_base": 164200270
+  },
+  {
+    "lvl": 92,
+    "exp_next": 15348000,
+    "total_base": 177859270
+  },
+  {
+    "lvl": 93,
+    "exp_next": 15912000,
+    "total_base": 193207270
+  },
+  {
+    "lvl": 94,
+    "exp_next": 17534000,
+    "total_base": 209119270
+  },
+  {
+    "lvl": 95,
+    "exp_next": 18263000,
+    "total_base": 226653270
+  },
+  {
+    "lvl": 96,
+    "exp_next": 20322000,
+    "total_base": 244916270
+  },
+  {
+    "lvl": 97,
+    "exp_next": 20957000,
+    "total_base": 265238270
+  },
+  {
+    "lvl": 98,
+    "exp_next": 22979000,
+    "total_base": 286195270
+  },
+  {
+    "lvl": 99,
+    "exp_next": 23789000,
+    "total_base": 309174270
+  },
+  {
+    "lvl": 100,
+    "exp_next": 0,
+    "total_base": 332963270
   }
 ]
