@@ -1,16 +1,10 @@
-import {Button, Flex, Link} from "@chakra-ui/react";
-import {FaCalculator, FaTerminal} from "react-icons/fa";
+import {Flex} from "@chakra-ui/react";
+import ButtonLink from "../components/ButtonLink";
 
 export default function Home() {
     return <Flex gap={2} direction={['column', 'row']}
                  flexWrap="nowrap" justifyContent="center">
-        <Button as={Link} colorScheme='blue' href="/exp-calculator"
-                leftIcon={<FaCalculator/>}>
-            Exp Calculator
-        </Button>
-        <Button as={Link} colorScheme='green' href="/macro-builder"
-                leftIcon={<FaTerminal/>}>
-            Macro Builder
-        </Button>
+        <ButtonLink href="/exp-calculator">Exp Calculator</ButtonLink>
+        <ButtonLink href="/macro-builder">Macro Builder</ButtonLink>
     </Flex>;
 }

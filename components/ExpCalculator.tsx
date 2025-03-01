@@ -1,17 +1,15 @@
 import {FormEvent, useCallback, useState} from "react";
 import LevelChart from "../helpers/LevelChart";
 import {
-    Box, Button,
-    Flex,
-    FormControl,
-    FormLabel, Grid, Heading, Icon,
-    NumberDecrementStepper,
-    NumberIncrementStepper,
-    NumberInput,
-    NumberInputField,
-    NumberInputStepper, Text
+    Box, Button, Grid, Heading, Icon, Text
 } from "@chakra-ui/react";
 import {FaCalculator} from "react-icons/fa";
+
+import {
+    NumberInputField,
+    NumberInputLabel,
+    NumberInputRoot,
+} from "../src/components/ui/number-input";
 
 interface ResultCalc {
     quantity: number
@@ -43,60 +41,34 @@ export default function ExpCalculator() {
         setResult({quantity});
     }, [setResult]);
 
-    return <Box as="form" onSubmit={handleSubmit} maxW="min(100%, 720px)" m={"0 auto"} py={4}>
-        <Heading mb={2}><Icon as={FaCalculator}/> Exp Calculator</Heading>
-        <Grid gap={4} mb={4} templateColumns={['1fr', '1fr 1fr']}>
-            <FormControl>
-                <FormLabel>Current Level</FormLabel>
-                <NumberInput
-                    name="cur_lvl"
-                    min={LevelChart.MIN} max={LevelChart.MAX - 1}
-                    defaultValue={LevelChart.MIN}
-                >
+    return <Box asChild maxW="min(100%, 720px)" m={"0 auto"} py={4}>
+        <form onSubmit={handleSubmit}>
+            <Heading mb={2}><Icon as={FaCalculator}/> Exp Calculator</Heading>
+            <Grid gap={4} mb={4} templateColumns={['1fr', '1fr 1fr']}>
+                <NumberInputRoot name="cur_lvl"
+                                 min={LevelChart.MIN} max={LevelChart.MAX - 1}
+                                 defaultValue={LevelChart.MIN}>
+                    <NumberInputLabel>Current Level</NumberInputLabel>
                     <NumberInputField/>
-                    <NumberInputStepper>
-                        <NumberIncrementStepper/>
-                        <NumberDecrementStepper/>
-                    </NumberInputStepper>
-                </NumberInput>
-            </FormControl>
-            <FormControl>
-                <FormLabel>Target Level</FormLabel>
-                <NumberInput
-                    name="target_lvl"
-                    min={LevelChart.MIN + 1} max={LevelChart.MAX}
-                    defaultValue={LevelChart.MAX}
-                >
+                </NumberInputRoot>
+                <NumberInputRoot name="target_lvl"
+                                 min={LevelChart.MIN + 1} max={LevelChart.MAX}
+                                 defaultValue={LevelChart.MAX}>
+                    <NumberInputLabel>Target Level</NumberInputLabel>
                     <NumberInputField/>
-                    <NumberInputStepper>
-                        <NumberIncrementStepper/>
-                        <NumberDecrementStepper/>
-                    </NumberInputStepper>
-                </NumberInput>
-            </FormControl>
-            <FormControl>
-                <FormLabel>Current EXP</FormLabel>
-                <NumberInput name="cur_exp" min={0} defaultValue={0}>
+                </NumberInputRoot>
+                <NumberInputRoot name="cur_exp" min={0} defaultValue={0}>
+                    <NumberInputLabel>Current EXP</NumberInputLabel>
                     <NumberInputField/>
-                    <NumberInputStepper>
-                        <NumberIncrementStepper/>
-                        <NumberDecrementStepper/>
-                    </NumberInputStepper>
-                </NumberInput>
-            </FormControl>
-            <FormControl>
-                <FormLabel>Item EXP</FormLabel>
-                <NumberInput name="item_exp" min={1} defaultValue={1}>
+                </NumberInputRoot>
+                <NumberInputRoot name="item_exp" min={1} defaultValue={1}>
+                    <NumberInputLabel>Item EXP</NumberInputLabel>
                     <NumberInputField/>
-                    <NumberInputStepper>
-                        <NumberIncrementStepper/>
-                        <NumberDecrementStepper/>
-                    </NumberInputStepper>
-                </NumberInput>
-            </FormControl>
-            <Button type="submit">Calcular</Button>
-        </Grid>
-        <hr/>
-        <Text fontSize="xl" my={2}>Item Quantity: <small>{result.quantity}</small></Text>
+                </NumberInputRoot>
+                <Button type="submit">Calcular</Button>
+            </Grid>
+            <hr/>
+            <Text fontSize="xl" my={2}>Item Quantity: <small>{result.quantity}</small></Text>
+        </form>
     </Box>;
 }

@@ -1,17 +1,17 @@
 import '../css/style.scss';
-import {Box, ChakraProvider} from "@chakra-ui/react";
-import theme from "../helpers/Theme";
+import {Box} from "@chakra-ui/react";
 import Clock from "../components/Clock";
+import {Provider} from '../src/components/ui/provider'
 
 function MyApp({Component, pageProps}) {
-    return <ChakraProvider theme={theme}>
+    return <Provider>
         <Box as={"header"} p={2}>
             <Clock/>
         </Box>
         <Box as={'main'} p={2}>
             <Component {...pageProps} />
         </Box>
-    </ChakraProvider>;
+    </Provider>;
 }
 
 export default MyApp;
